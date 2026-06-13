@@ -1,0 +1,23 @@
+# Caddy automatically obtains & renews TLS certs for these domains via
+# Let's Encrypt. DNS must already point to this server (it does — certbot
+# worked before). Drop www below if your domain only uses the apex.
+
+{
+	# ACME account email (for expiry notices / recovery)
+	email ashishbisoi236@gmail.com
+}
+
+ashishbisoi.cc, www.ashishbisoi.cc {
+	root * /srv
+	encode zstd gzip
+	file_server
+
+	# Cache content-hashed Vite assets forever
+	@assets path /assets/*
+	header @assets Cache-Control "public, max-age=31536000, immutable"
+	# Always revalidate the HTML shell so deploys show up immediately
+	header /index.html Cache-Control "no-cache"
+
+	# SPA fallback (harmless for this anchor-based site, future-proof)
+	try_files {path} /index.html
+}

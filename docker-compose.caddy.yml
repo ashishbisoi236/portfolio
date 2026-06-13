@@ -1,0 +1,28 @@
+# Caddy variant: one container serves the static build AND terminates TLS
+# (automatic HTTPS). Replaces the host nginx + certbot setup.
+#
+#   docker compose -f docker-compose.caddy.yml up -d --build
+#
+# Requires host ports 80/443 to be free (stop host nginx first — see DEPLOY.md).
+
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile.caddy
+    image: portfolio-caddy:latest
+    container_name: portfolio
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+      - "443:443/udp" # HTTP/3 (QUIC)
+    volumes:
+      # Persist issued certs & ACME account so restarts don't re-request
+      # (and risk Let's Encrypt rate limits).
+      - caddy_data:/data
+      - caddy_config:/config
+
+volumes:
+  caddy_data:
+  caddy_config:
