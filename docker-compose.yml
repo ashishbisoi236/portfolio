@@ -1,0 +1,9 @@
+services:
+  portfolio:
+    build: .
+    image: portfolio:latest
+    container_name: portfolio
+    restart: unless-stopped
+    # Bind to localhost only — the host nginx (with TLS) is the public entry point.
+    ports:
+      - "127.0.0.1:8080:80"
