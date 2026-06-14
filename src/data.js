@@ -10,7 +10,7 @@ export const profile = {
   ],
   tagline: "I build large-scale web applications end to end — from React frontends to backend services and APIs — that people actually enjoy using.",
   summary:
-    "Generalist software engineer with 4+ years of experience building products end to end — frontend-leaning but comfortable across the stack. I craft microfrontends, complex enterprise workflows, and analytics dashboards, plus the Python/FastAPI and Node services behind them, increasingly leveraging AI to ship faster. I care about clean architecture, thoughtful UX, and reliable software backed by tests.",
+    "Generalist software engineer with 4+ years of experience building products end to end — frontend-leaning but comfortable across the stack. I craft React microfrontends, mobile PWAs and complex enterprise workflows, plus the Python/FastAPI and Node services behind them, increasingly leveraging AI to ship faster. I care about clean architecture, thoughtful UX, and reliable software backed by tests.",
   location: "Mumbai, India",
   email: "ashishbisoi236@gmail.com",
   links: {
@@ -36,19 +36,19 @@ export const experiences = [
     location: "Mumbai, Maharashtra",
     current: true,
     summary:
-      "Building the Impetus platform with React microfrontends — owning complex supply-chain workflows used by 30–40k store users end to end.",
+      "Building the Impetus / StoreOps platform with React microfrontends and a mobile PWA — owning complex retail workflows used daily by 30–40k store users across Reliance Retail.",
     highlights: [
       "Partnered with UX and PMs to revamp the Central Masters Tool and Analytics screens, lifting click-through by 21%.",
-      "Designed end-to-end Late Delivery workflows with dynamic UI rendering, conditional validation, and API-driven escalation & approval paths.",
-      "Built a robust Maker-Checker workflow with real-time validation, state management, and role-specific access for audit-compliant processes.",
-      "Developed Bulk Upload to onboard large team datasets with error handling, preview validation, and confirmation steps.",
-      "Built backend services and APIs with Node/Express and Python/FastAPI to power workflow automation and data endpoints consumed by the React microfrontends.",
-      "Integrated RBAC across the application, controlling module, screen, and action visibility per user role.",
-      "Created a Supplier Code Selection workflow with cookie-based cross-session persistence and routing integration.",
-      "Adopted AI-assisted workflows (Claude Code) for scaffolding, refactoring, and test generation — cutting time-to-ship on routine feature work.",
-      "Wrote and maintained extensive unit and integration tests, and tracked usage via MS Clarity to guide the roadmap.",
+      "Designed end-to-end Late Delivery and Maker-Checker workflows with dynamic UI rendering, conditional validation, real-time state, and role-specific access for audit-compliant processes.",
+      "Shipped the Size Finder feature end-to-end — a barcode-scan PWA page on the mobile app, backed by a FastAPI BFF that orchestrates 3 external Fynd platform APIs concurrently with GraphQL store resolution and graceful degradation.",
+      "Built the Sales KPI dashboard and Inventory Validation flow on the store-staff PWA, plus the Reports Dump, Assignment Audit, and configurable survey-question features on the admin web.",
+      "Built backend services and APIs with Python/FastAPI and Node/Express — including the cross-cutting Functions feature (multi-tenant Postgres + Mongo schema, RBAC for function-admins, task-list filtering).",
+      "Integrated RBAC across the application controlling module, screen, and action visibility per user role; safely rolled out role-rename and role-slug changes across FE/BE.",
+      "Drove the team's AI-augmented workflow with Claude Code — scaffolding, refactoring, AI-aided unit tests, and a new FE↔BE integration loop using .md API contracts.",
+      "Set up FE coding standards, contributed to the shared Gends design-system repo, onboarded new joiners, and drove Harbor vulnerability fixes documented in a team-wide runbook.",
+      "Added Temporal OpenTelemetry tracing and Sentry alerting across services, and backed the mobile PWA with extensive Jest and React Testing Library unit tests for reliable CI.",
     ],
-    tech: ["ReactJS", "JavaScript", "NodeJS", "Express", "VueJS", "Python", "FastAPI", "Kafka"],
+    tech: ["ReactJS", "TypeScript", "JavaScript", "NodeJS", "Express", "Python", "FastAPI", "PostgreSQL", "MongoDB", "Redis", "Kafka", "Temporal"],
   },
   {
     company: "Disprz",
@@ -120,19 +120,19 @@ export const projects = [
 export const skillGroups = [
   {
     label: "Languages",
-    items: ["JavaScript", "Python", "C#", "C++"],
+    items: ["JavaScript", "TypeScript", "Python", "C#", "C++"],
   },
   {
     label: "Libraries & Frameworks",
-    items: ["React", "React Testing Library", "Vue.js", "Node.js", "Express", "FastAPI", ".NET Core"],
+    items: ["React", "React Testing Library", "Jest", "Vue.js", "Node.js", "Express", "FastAPI", ".NET Core"],
   },
   {
     label: "Concepts",
-    items: ["Microfrontends", "AI-Assisted Development", "Data Structures", "Algorithms", "Operating Systems", "DBMS"],
+    items: ["Microfrontends", "AI-Assisted Development", "RBAC & Multi-tenancy", "Event-driven architecture", "BFF pattern", "Data Structures", "Algorithms", "DBMS"],
   },
   {
     label: "Tools & Platforms",
-    items: ["Git", "VS Code", "Postman", "Kafka", "MS Clarity", "Optimizely"],
+    items: ["Git", "Docker", "VS Code", "Postman", "PostgreSQL", "MongoDB", "Kafka", "Temporal", "MS Clarity", "Sentry", "Claude Code"],
   },
 ];
 
