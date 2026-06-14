@@ -14,8 +14,14 @@ export default function Skills() {
 
       <div className="skills-grid">
         {skillGroups.map((group, i) => (
-          <Reveal className="skill-card" key={group.label} delay={i * 70}>
+          <Reveal
+            className="skill-card"
+            key={group.label}
+            delay={i * 70}
+            style={{ "--card-accent": `var(--cat-${group.accent})` }}
+          >
             <h3 className="skill-card-label">{group.label}</h3>
+            {group.note && <p className="skill-card-note">{group.note}</p>}
             <div className="skill-tags">
               {group.items.map((item) => (
                 <span key={item} className="skill-tag">

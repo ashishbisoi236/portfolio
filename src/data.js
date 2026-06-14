@@ -35,6 +35,7 @@ export const experiences = [
     period: "Aug 2024 — Present",
     location: "Mumbai, Maharashtra",
     current: true,
+    accent: "coral",
     summary:
       "Building the Impetus platform with React microfrontends — owning complex supply-chain workflows used by 30–40k store users end to end.",
     highlights: [
@@ -55,6 +56,7 @@ export const experiences = [
     role: "Software Engineer",
     period: "Jun 2023 — Apr 2024",
     location: "Chennai, Tamil Nadu",
+    accent: "plum",
     summary:
       "Worked on the LXP platform microfrontends used by end consumers to create and consume surveys and feedback.",
     highlights: [
@@ -70,6 +72,7 @@ export const experiences = [
     role: "Associate Software Engineer",
     period: "Jul 2021 — Nov 2022",
     location: "Pune, Maharashtra",
+    accent: "olive",
     summary:
       "Built the Mindbody B2C app — used by 1.2M+ consumers to book appointments and classes at fitness establishments.",
     highlights: [
@@ -82,57 +85,30 @@ export const experiences = [
   },
 ];
 
-export const projects = [
-  {
-    title: "FlashBack",
-    blurb: "A social platform for sharing memorable events.",
-    description:
-      "Social media app where users post interesting events and can like, edit, delete, and search posts by tags and titles.",
-    tech: ["React", "Node.js", "Express", "MongoDB"],
-    accent: "violet",
-  },
-  {
-    title: "YouTube Clone",
-    blurb: "Search and stream any video or channel.",
-    description:
-      "Search videos and channels through RapidAPI endpoints, with playback and live channel statistics like subscriber and like counts.",
-    tech: ["React", "JavaScript", "RapidAPI", "Material UI"],
-    accent: "cyan",
-  },
-  {
-    title: "URL Shortener",
-    blurb: "Fast, resilient link shortening service.",
-    description:
-      "ASP.NET Core service that shortens URLs with a robust fallback route handling unmatched requests and redirecting users to the right long URL.",
-    tech: [".NET Core", "C#", "SQLite"],
-    accent: "amber",
-  },
-  {
-    title: "Blog API",
-    blurb: "A clean REST API for users and blogs.",
-    description:
-      "Node.js REST server supporting full CRUD on users and blogs, with login credential encryption via bcryptjs.",
-    tech: ["Node.js", "Express", "MongoDB"],
-    accent: "emerald",
-  },
-];
-
 export const skillGroups = [
   {
     label: "Languages",
-    items: ["JavaScript", "Python", "C#", "C++"],
+    accent: "plum",
+    note: "what I think in",
+    items: ["JavaScript", "TypeScript", "Python", "C#", "C++"],
   },
   {
     label: "Libraries & Frameworks",
-    items: ["React", "React Testing Library", "Vue.js", "Node.js", "Express", "FastAPI", ".NET Core"],
+    accent: "olive",
+    note: "where I move fastest",
+    items: ["React", "React Testing Library", "Jest", "Vue.js", "Node.js", "Express", "FastAPI", ".NET Core"],
   },
   {
     label: "Concepts",
-    items: ["Microfrontends", "AI-Assisted Development", "Data Structures", "Algorithms", "Operating Systems", "DBMS"],
+    accent: "amber",
+    note: "how I reason about systems",
+    items: ["Microfrontends", "AI-Assisted Development", "RBAC & Multi-tenancy", "Event-driven architecture", "BFF pattern", "Data Structures", "Algorithms", "DBMS"],
   },
   {
     label: "Tools & Platforms",
-    items: ["Git", "VS Code", "Postman", "Kafka", "MS Clarity", "Optimizely"],
+    accent: "teal",
+    note: "the daily workbench",
+    items: ["Git", "Docker", "VS Code", "Postman", "PostgreSQL", "MongoDB", "Kafka", "Temporal", "MS Clarity", "Sentry", "Claude Code"],
   },
 ];
 

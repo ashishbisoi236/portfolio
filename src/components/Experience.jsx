@@ -14,7 +14,12 @@ export default function Experience() {
 
       <div className="timeline">
         {experiences.map((exp, i) => (
-          <Reveal className="timeline-item" key={exp.company} delay={i * 80}>
+          <Reveal
+            className="timeline-item"
+            key={exp.company}
+            delay={i * 80}
+            style={{ "--card-accent": `var(--cat-${exp.accent})` }}
+          >
             <div className="timeline-marker">
               <span className={`timeline-dot ${exp.current ? "is-current" : ""}`} />
               {i < experiences.length - 1 && <span className="timeline-line" />}

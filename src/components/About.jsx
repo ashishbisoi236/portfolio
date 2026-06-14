@@ -4,12 +4,12 @@ import Reveal from "./Reveal";
 import { MapPinIcon, SparkIcon } from "./Icons";
 
 const focus = [
-  "Microfrontend architecture",
-  "Complex enterprise workflows",
-  "Backend APIs (Node, Express, FastAPI)",
-  "Analytics dashboards",
-  "AI-assisted development",
-  "Testing & reliability",
+  { text: "Microfrontend architecture", accent: "plum" },
+  { text: "Complex enterprise workflows", accent: "olive" },
+  { text: "Backend APIs (Node, Express, FastAPI)", accent: "amber" },
+  { text: "Analytics dashboards", accent: "coral" },
+  { text: "AI-assisted development", accent: "teal" },
+  { text: "Testing & reliability", accent: "gray" },
 ];
 
 export default function About() {
@@ -44,7 +44,9 @@ export default function About() {
             </span>
             <ul className="about-focus">
               {focus.map((f) => (
-                <li key={f}>{f}</li>
+                <li key={f.text} style={{ "--item-accent": `var(--cat-${f.accent})` }}>
+                  {f.text}
+                </li>
               ))}
             </ul>
           </div>

@@ -38,12 +38,12 @@ main {
 }
 .btn-primary {
   background: var(--gradient);
-  color: #0a0a12;
-  box-shadow: 0 8px 30px -8px rgba(129, 140, 248, 0.6);
+  color: #f6efe0;
+  box-shadow: 0 8px 24px -10px rgba(13, 102, 120, 0.45);
 }
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px -8px rgba(129, 140, 248, 0.75);
+  box-shadow: 0 14px 34px -10px rgba(13, 102, 120, 0.55);
 }
 .btn-primary:hover svg {
   transform: translateX(3px);
@@ -57,7 +57,7 @@ main {
 .btn-ghost:hover {
   transform: translateY(-2px);
   border-color: var(--accent);
-  background: rgba(129, 140, 248, 0.08);
+  background: rgba(13, 102, 120, 0.08);
 }
 
 /* ---- Chips / tech tags ---- */
@@ -90,7 +90,7 @@ main {
   font-size: 0.8rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--accent);
+  color: color-mix(in srgb, var(--rust), #20180c 22%);
   margin-bottom: 1rem;
 }
 .section-index {
@@ -98,10 +98,10 @@ main {
 }
 .section-title {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: clamp(1.7rem, 3.8vw, 2.6rem);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  font-weight: 700;
+  font-size: clamp(1.9rem, 4vw, 2.9rem);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
 }
 .section-kicker {
   margin-top: 1rem;
@@ -129,7 +129,7 @@ main {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: rgba(7, 7, 13, 0.72);
+  background: rgba(242, 237, 228, 0.82);
   backdrop-filter: blur(14px) saturate(140%);
   opacity: 0;
   transition: opacity 0.3s var(--ease);
@@ -152,8 +152,8 @@ main {
 .nav-logo {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: 1.25rem;
-  letter-spacing: -0.02em;
+  font-size: 1.3rem;
+  letter-spacing: 0;
 }
 .nav-logo-dot {
   color: var(--accent);
@@ -198,7 +198,7 @@ main {
 }
 .nav-cta:hover {
   border-color: var(--accent);
-  background: rgba(129, 140, 248, 0.1);
+  background: rgba(13, 102, 120, 0.1);
 }
 .nav-cta::after {
   display: none !important;
@@ -278,9 +278,9 @@ main {
 .hero-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(2.3rem, 6.6vw, 4.6rem);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
+  font-size: clamp(2.5rem, 6.8vw, 5rem);
+  line-height: 1.08;
+  letter-spacing: -0.01em;
 }
 .hero-role {
   display: flex;
@@ -345,7 +345,7 @@ main {
   transform: translateY(-3px);
   color: var(--text);
   border-color: var(--accent);
-  background: rgba(129, 140, 248, 0.1);
+  background: rgba(13, 102, 120, 0.1);
 }
 
 .hero-stats {
@@ -359,8 +359,8 @@ main {
 .hero-stat dt {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.5rem, 4vw, 2.1rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(1.7rem, 4.4vw, 2.4rem);
+  letter-spacing: 0;
   background: var(--gradient);
   -webkit-background-clip: text;
   background-clip: text;
@@ -455,10 +455,14 @@ main {
   color: var(--text-soft);
 }
 .about-focus li::before {
-  content: "▹";
+  content: "";
   position: absolute;
   left: 0;
-  color: var(--accent-2);
+  top: 0.5em;
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  background: var(--item-accent, var(--accent-2));
 }
 .about-chips {
   display: flex;
@@ -489,13 +493,13 @@ main {
   margin-top: 6px;
   border-radius: 50%;
   background: var(--bg-soft);
-  border: 2px solid var(--border-strong);
+  border: 2px solid var(--card-accent, var(--border-strong));
   z-index: 1;
 }
 .timeline-dot.is-current {
-  border-color: var(--accent);
-  background: var(--accent);
-  box-shadow: 0 0 0 4px rgba(129, 140, 248, 0.18);
+  border-color: var(--card-accent, var(--accent));
+  background: var(--card-accent, var(--accent));
+  box-shadow: 0 0 0 4px rgba(50, 38, 18, 0.1);
 }
 .timeline-line {
   position: absolute;
@@ -509,6 +513,7 @@ main {
   margin-bottom: 1.6rem;
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--card-accent, var(--accent));
   background: var(--surface);
   transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
     background 0.3s var(--ease);
@@ -528,14 +533,14 @@ main {
 }
 .timeline-role {
   font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 .timeline-company {
   margin-top: 0.25rem;
-  color: var(--accent);
-  font-weight: 500;
+  color: color-mix(in srgb, var(--card-accent, var(--accent)), #20180c 32%);
+  font-weight: 600;
   font-size: 0.95rem;
 }
 .timeline-sep {
@@ -555,11 +560,14 @@ main {
   white-space: nowrap;
 }
 .timeline-period.is-current {
-  color: var(--accent);
-  border-color: rgba(129, 140, 248, 0.4);
-  background: rgba(129, 140, 248, 0.08);
+  color: var(--card-accent, var(--accent));
+  border-color: var(--border-strong);
+  background: var(--surface-2);
 }
 .timeline-summary {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1.08rem;
   color: var(--text-soft);
   margin-bottom: 1.1rem;
 }
@@ -578,105 +586,13 @@ main {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--accent-2);
+  background: var(--card-accent, var(--accent-2));
 }
 .timeline-tech {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
   margin-top: 1.3rem;
-}
-
-/* ============================================================
-   Projects
-============================================================ */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.4rem;
-}
-.project-card {
-  position: relative;
-  overflow: hidden;
-  padding: clamp(24px, 4vw, 34px);
-  border-radius: var(--radius);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  transition: transform 0.35s var(--ease), border-color 0.35s var(--ease);
-}
-.project-card:hover {
-  transform: translateY(-5px);
-  border-color: var(--border-strong);
-}
-.project-glow {
-  position: absolute;
-  top: -40%;
-  right: -30%;
-  width: 60%;
-  height: 80%;
-  border-radius: 50%;
-  filter: blur(60px);
-  opacity: 0;
-  transition: opacity 0.4s var(--ease);
-}
-.project-card:hover .project-glow {
-  opacity: 0.5;
-}
-.project-card[data-accent="violet"] .project-glow {
-  background: rgba(129, 140, 248, 0.5);
-}
-.project-card[data-accent="cyan"] .project-glow {
-  background: rgba(34, 211, 238, 0.45);
-}
-.project-card[data-accent="amber"] .project-glow {
-  background: rgba(251, 191, 36, 0.4);
-}
-.project-card[data-accent="emerald"] .project-glow {
-  background: rgba(52, 211, 153, 0.4);
-}
-.project-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 0.6rem;
-}
-.project-title {
-  font-family: var(--font-display);
-  font-size: 1.4rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-}
-.project-arrow {
-  display: grid;
-  place-items: center;
-  width: 38px;
-  height: 38px;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  color: var(--text-soft);
-  transition: transform 0.3s var(--ease), color 0.3s var(--ease),
-    border-color 0.3s var(--ease), background 0.3s var(--ease);
-}
-.project-card:hover .project-arrow {
-  color: var(--text);
-  border-color: var(--accent);
-  background: rgba(129, 140, 248, 0.1);
-  transform: rotate(-45deg);
-}
-.project-blurb {
-  color: var(--text);
-  font-weight: 500;
-  margin-bottom: 0.6rem;
-}
-.project-desc {
-  color: var(--text-soft);
-  font-size: 0.96rem;
-  margin-bottom: 1.4rem;
-}
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
 }
 
 /* ============================================================
@@ -691,11 +607,13 @@ main {
   padding: clamp(22px, 3.5vw, 30px);
   border-radius: var(--radius);
   border: 1px solid var(--border);
+  border-left: 3px solid var(--card-accent, var(--accent));
   background: var(--surface);
   transition: border-color 0.3s var(--ease), background 0.3s var(--ease);
 }
 .skill-card:hover {
   border-color: var(--border-strong);
+  border-left-color: var(--card-accent, var(--accent));
   background: var(--surface-2);
 }
 .skill-card-label {
@@ -703,8 +621,15 @@ main {
   font-size: 0.8rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  color: var(--accent);
-  margin-bottom: 1.1rem;
+  color: color-mix(in srgb, var(--card-accent, var(--accent)), #20180c 40%);
+  margin-bottom: 0.35rem;
+}
+.skill-card-note {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--text-soft);
+  margin-bottom: 1.2rem;
 }
 .skill-tags {
   display: flex;
@@ -723,7 +648,7 @@ main {
 .skill-tag:hover {
   transform: translateY(-2px);
   color: var(--text);
-  border-color: var(--accent);
+  border-color: var(--card-accent, var(--accent));
 }
 
 /* ============================================================
@@ -754,8 +679,8 @@ main {
   width: 46px;
   height: 46px;
   border-radius: 12px;
-  background: rgba(129, 140, 248, 0.1);
-  border: 1px solid rgba(129, 140, 248, 0.25);
+  background: rgba(13, 102, 120, 0.1);
+  border: 1px solid rgba(13, 102, 120, 0.25);
   color: var(--accent);
 }
 .edu-head {
@@ -766,15 +691,15 @@ main {
 }
 .edu-school {
   font-family: var(--font-display);
-  font-size: 1.15rem;
-  font-weight: 600;
-  letter-spacing: -0.01em;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0;
 }
 .edu-meta {
   flex-shrink: 0;
   font-family: var(--font-mono);
   font-size: 0.82rem;
-  color: var(--accent-2);
+  color: color-mix(in srgb, var(--accent-2), #20180c 22%);
 }
 .edu-detail {
   margin-top: 0.35rem;
@@ -812,7 +737,7 @@ main {
   transform: translateX(-50%);
   width: 70%;
   height: 100%;
-  background: radial-gradient(closest-side, rgba(129, 140, 248, 0.3), transparent);
+  background: radial-gradient(closest-side, rgba(13, 102, 120, 0.16), transparent);
   filter: blur(40px);
   pointer-events: none;
 }
@@ -822,9 +747,9 @@ main {
 .contact-title {
   font-family: var(--font-display);
   font-weight: 700;
-  font-size: clamp(1.8rem, 5vw, 3rem);
+  font-size: clamp(2rem, 5.2vw, 3.2rem);
   line-height: 1.1;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.01em;
   margin-bottom: 1.2rem;
 }
 .contact-copy {
@@ -907,7 +832,6 @@ main {
   .about-grid {
     grid-template-columns: 1fr;
   }
-  .projects-grid,
   .skills-grid,
   .edu-grid {
     grid-template-columns: 1fr;
@@ -927,9 +851,10 @@ main {
     justify-content: center;
     gap: 0.4rem;
     padding: 2rem;
-    background: rgba(10, 10, 18, 0.96);
+    background: rgba(242, 237, 228, 0.97);
     backdrop-filter: blur(18px);
     border-left: 1px solid var(--border);
+    box-shadow: -24px 0 60px -24px rgba(40, 30, 15, 0.3);
     transform: translateX(100%);
     transition: transform 0.35s var(--ease);
   }
