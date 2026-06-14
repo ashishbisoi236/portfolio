@@ -118,13 +118,27 @@ main {
   left: 0;
   right: 0;
   z-index: 100;
-  transition: background 0.3s var(--ease), border-color 0.3s var(--ease),
-    backdrop-filter 0.3s var(--ease);
+  transition: border-color 0.3s var(--ease);
   border-bottom: 1px solid transparent;
 }
-.nav.is-scrolled {
+/* Scrolled background lives on a pseudo-element so .nav itself never gets a
+   backdrop-filter — otherwise it would become the containing block for the
+   fixed mobile menu and collapse it to the nav-bar height. */
+.nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background: rgba(7, 7, 13, 0.72);
   backdrop-filter: blur(14px) saturate(140%);
+  opacity: 0;
+  transition: opacity 0.3s var(--ease);
+  pointer-events: none;
+}
+.nav.is-scrolled::before {
+  opacity: 1;
+}
+.nav.is-scrolled {
   border-bottom-color: var(--border);
 }
 .nav-inner {

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { profile, stats } from "../data";
-import { GitHubIcon, LinkedInIcon, MailIcon, ArrowDownIcon, ArrowRightIcon } from "./Icons";
+import { GitHubIcon, LinkedInIcon, MailIcon, ArrowDownIcon, ArrowRightIcon, DownloadIcon } from "./Icons";
 
 const reducedMotion = () =>
   typeof window !== "undefined" &&
@@ -59,7 +59,7 @@ function useTypewriter(words, { type = 95, erase = 45, hold = 2200, pause = 500 
 }
 
 export default function Hero() {
-  const typed = useTypewriter(profile.roles, { type: 95, erase: 45, hold: 2200 });
+  const typed = useTypewriter(profile.roles, { type: 70, erase: 40, hold: 2200 });
 
   return (
     <section className="hero" id="top">
@@ -83,8 +83,17 @@ export default function Hero() {
         <p className="hero-tagline">{profile.tagline}</p>
 
         <div className="hero-cta">
-          <a href="#projects" className="btn btn-primary">
+          <a href="#experience" className="btn btn-primary">
             View my work <ArrowRightIcon width={18} height={18} />
+          </a>
+          <a
+            href={profile.links.resume}
+            className="btn btn-ghost"
+            target="_blank"
+            rel="noopener noreferrer"
+            download
+          >
+            Resume <DownloadIcon width={18} height={18} />
           </a>
           <a href={profile.links.email} className="btn btn-ghost">
             Get in touch

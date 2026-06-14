@@ -6,8 +6,9 @@ import { MapPinIcon, SparkIcon } from "./Icons";
 const focus = [
   "Microfrontend architecture",
   "Complex enterprise workflows",
+  "Backend APIs (Node, Express, FastAPI)",
   "Analytics dashboards",
-  "Design-system thinking",
+  "AI-assisted development",
   "Testing & reliability",
 ];
 
@@ -19,7 +20,7 @@ export default function About() {
       <SectionHeading
         index="01"
         eyebrow="About"
-        title="Turning intricate product requirements into interfaces that feel effortless."
+        title="Turning intricate product requirements into software that feels effortless."
       />
 
       <div className="about-grid">
