@@ -6,7 +6,7 @@ import { GradCapIcon } from "./Icons";
 export default function Education() {
   return (
     <section className="section" id="education">
-      <SectionHeading index="05" eyebrow="Education" title="Where it started." />
+      <SectionHeading index="04" eyebrow="Education" title="Where it started." />
 
       <div className="edu-grid">
         {education.map((e, i) => (

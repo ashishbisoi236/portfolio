@@ -6,7 +6,7 @@ export default function Skills() {
   return (
     <section className="section" id="skills">
       <SectionHeading
-        index="04"
+        index="03"
         eyebrow="Skills"
         title="The toolkit."
         kicker="What I reach for to design, build, and ship."
