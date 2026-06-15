@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { profile, stats } from "../data";
 import { GitHubIcon, LinkedInIcon, MailIcon, ArrowDownIcon, ArrowRightIcon, DownloadIcon } from "./Icons";
+import RippleWave from "./RippleWave";
 
 const reducedMotion = () =>
   typeof window !== "undefined" &&
@@ -63,6 +64,8 @@ export default function Hero() {
 
   return (
     <section className="hero" id="top">
+      <RippleWave className="hero-decor" color="var(--cat-amber)" rings={24} size={320} step={6} weight={2} />
+
       <div className="hero-inner">
         <p className="hero-eyebrow">
           <span className="status-dot" /> Available for new opportunities

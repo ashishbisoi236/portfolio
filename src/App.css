@@ -395,6 +395,59 @@ main {
   }
 }
 
+/* ---- Ripple wave (decorative contour rings) ---- */
+.ripple-wave {
+  position: relative;
+  width: var(--ripple-size, 200px);
+  height: var(--ripple-size, 200px);
+  transform: perspective(620px) rotateX(34deg) rotateZ(-10deg);
+  pointer-events: none;
+}
+.ripple-wave span {
+  position: absolute;
+  inset: calc(var(--i) * var(--ripple-step, 6px));
+  border: var(--ripple-weight, 1px) solid var(--ripple-color, var(--accent));
+  border-radius: 30%;
+  animation: ripple-float 5s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.1s);
+}
+@keyframes ripple-float {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateY(50px);
+  }
+  50% {
+    transform: translateY(-50px);
+  }
+  75% {
+    transform: translateX(50px);
+  }
+}
+
+/* Hero placement: tucked into the empty right-hand gap.
+   The vertical centering must compose with the 3D tilt, so the full
+   transform is restated here (overriding the base .ripple-wave tilt). */
+.hero-decor {
+  position: absolute;
+  top: 50%;
+  right: -16px;
+  opacity: 0.5;
+  z-index: 0;
+  transform: translateY(-50%) perspective(620px) rotateX(34deg) rotateZ(-10deg);
+}
+@media (max-width: 1300px) {
+  .hero-decor {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ripple-wave span {
+    animation: none;
+  }
+}
+
 /* ============================================================
    About
 ============================================================ */
