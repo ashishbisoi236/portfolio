@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Monogram from "./Monogram";
 
 const links = [
   { id: "about", label: "About" },
@@ -47,8 +48,8 @@ export default function Nav() {
   return (
     <header className={`nav ${scrolled ? "is-scrolled" : ""}`}>
       <div className="nav-inner">
-        <a href="#top" className="nav-logo" onClick={(e) => go(e, "top")}>
-          Ashish<span className="nav-logo-dot">.</span>
+        <a href="#top" className="nav-brand" onClick={(e) => go(e, "top")} aria-label="Ashish Bisoi — home">
+          <Monogram text="ab" />
         </a>
 
         <nav className={`nav-links ${open ? "is-open" : ""}`}>

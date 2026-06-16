@@ -5,11 +5,8 @@ export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer-inner">
-        <a href="#top" className="nav-logo">
-          Ashish<span className="nav-logo-dot">.</span>
-        </a>
         <p className="footer-note">
-          Designed & built by {profile.name} · {new Date().getFullYear()}
+          © {new Date().getFullYear()} · {profile.name}
         </p>
         <div className="footer-social">
           <a href={profile.links.github} target="_blank" rel="noreferrer" aria-label="GitHub">
