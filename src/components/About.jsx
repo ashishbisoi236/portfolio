@@ -6,7 +6,7 @@ import { MapPinIcon, SparkIcon } from "./Icons";
 const focus = [
   { text: "Microfrontend architecture", accent: "plum" },
   { text: "Complex enterprise workflows", accent: "olive" },
-  { text: "Backend APIs (Node, Express, FastAPI)", accent: "amber" },
+  { text: "Backend APIs (Node.js, Express.js, FastAPI)", accent: "amber" },
   { text: "Analytics dashboards", accent: "coral" },
   { text: "AI-assisted development", accent: "teal" },
   { text: "Testing & reliability", accent: "gray" },
