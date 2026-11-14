@@ -3,13 +3,13 @@
 FROM node:22-alpine AS build
 WORKDIR /app
 
-# Install deps from lockfile (cached unless package*.json changes)
-COPY package.json package-lock.json ./
-RUN npm ci
+# Install deps from the pnpm lockfile (cached unless manifests change)
+COPY package.json pnpm-lock.yaml ./
+RUN corepack enable && pnpm install --frozen-lockfile
 
 # Build the static site
 COPY . .
-RUN npm run build
+RUN pnpm run build
 
 # ---- Serve stage ----
 FROM nginx:alpine AS serve

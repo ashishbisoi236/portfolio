@@ -40,7 +40,7 @@ sudo usermod -aG docker $USER      # so you can run docker without sudo
 cd ~
 git clone https://github.com/ashishbisoi236/portfolio.git
 cd portfolio
-git checkout portfolio-v2          # the branch with this build
+git checkout portfolio-v4          # the branch with this build
 ```
 
 ## 2. Build and run the container
@@ -190,7 +190,7 @@ sudo systemctl enable --now nginx
 ## e2-micro memory note
 
 The e2-micro has ~1 GB RAM. The Vite build is small and normally fits, but if
-`docker compose up --build` ever gets killed during `npm run build` (OOM), add a
+`docker compose up --build` ever gets killed during `pnpm run build` (OOM), add a
 swap file once:
 
 ```bash
